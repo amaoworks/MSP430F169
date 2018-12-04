@@ -2,7 +2,7 @@
  * Config.h
  *
  *  Created on: 2018Äê11ÔÂ18ÈÕ
- *      Author: myy12
+ *      Author: Brown
  */
 #include <msp430f169.h>
 

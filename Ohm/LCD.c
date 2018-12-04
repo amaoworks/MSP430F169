@@ -1,7 +1,7 @@
 /*
  * LCD.c
  *
- *  Created on: 2018年11月18日
+ *  Created on: 2018年12月3日
  *      Author: Brown
  */
 #include "LCD.h"
@@ -78,63 +78,3 @@ void display(unsigned long int num){        //数字显示
         delay_ms(5);
     }
 }
-
-
-//键盘测试
-
-//*************************************************************************
-//  初始化IO口子程序
-//*************************************************************************
-void Port_In()
-{
-
-    P1SEL = 0x00;                   //P1普通IO功能
-    P1DIR = 0xF0;                   //P10~P13输入模式，外部电路已接上拉电阻
-    P6SEL = 0x00;                   //P6口普通IO功能
-    P6DIR = 0xFF;                   //P6口输出模式
-}
-
-//**********************************************************************
-//  键盘扫描子程序，采用逐键扫描的方式
-//**********************************************************************
-
-uchar Key_Scan(void)
-{
-    uchar key_check;
-    uchar key_checkin;
-    key_checkin=KeyPort;              //读取IO口状态，判断是否有键按下
-    key_checkin&= 0x0F;               //读取IO口状态，判断是否有键按下
-    if(key_checkin!=0x0F)             //IO口值发生变化则表示有键按下
-    {
-        delay_ms(20);                     //键盘消抖，延时20MS
-        key_checkin=KeyPort;
-        if(key_checkin!=0x1F)
-        {
-            key_check=KeyPort;
-            switch (key_check & 0x0F)
-            {
-            case 0x0E:key=1;break;
-            case 0x0D:key=2;break;
-            case 0x0B:key=3;break;
-            case 0x07:key=4;break;
-            }
-
-        }
-
-    }
-    else
-    {
-        key=0xFF;
-    }
-    return key;
-}
-
-//写入
-
-/*显示
-void Watch(){
-    write_com(0x80);
-    display(b);
-    write_com(0x80 + 0x40);
-    write_date(c);
-}*/

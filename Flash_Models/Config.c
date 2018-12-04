@@ -2,7 +2,7 @@
  * Config.c
  *
  *  Created on: 2018年11月18日
- *      Author: myy12
+ *      Author: Brown
  */
 #include "Config.h"
 //设置Flash的时钟，初始化Flash控制器

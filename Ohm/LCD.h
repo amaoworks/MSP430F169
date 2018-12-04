@@ -1,27 +1,12 @@
 /*
  * LCD.h
  *
- *  Created on: 2018年11月18日
+ *  Created on: 2018年12月3日
  *      Author: Brown
  */
 #include "Config.h"
 #ifndef LCD_H_
 #define LCD_H_
-
-void write_com(uchar com);
-void write_date(uchar date);
-void init();
-void port_init();
-void display(unsigned long int num);
-void Port_In();
-uchar Key_Scan(void);
-
-//void Write();
-//void Read();
-//void Watch();
-
-//4个独立按键连接在P10~P13
-#define KeyPort         P1IN                              //独立键盘接在P10~P13
 
 #define set_RS P5OUT |=  BIT5          //设置RS为1
 #define clr_RS P5OUT &= ~BIT5          //设置RS为0
@@ -32,5 +17,10 @@ uchar Key_Scan(void);
 #define dataout P4DIR=0xff             //初始化D0~D7
 #define dataport P4OUT
 
+void write_com(uchar com);
+void write_date(uchar date);
+void init();
+void port_init();
+void display(unsigned long int num);
 
 #endif /* LCD_H_ */
