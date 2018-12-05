@@ -17,7 +17,7 @@ void main(void)
     WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
     Clock_Init(1);              // 0 就是 1M， 1 就是 8M
 
-    PWM_init();               // Init the PWM
+    PWM_init();                 // Init the PWM
 
     LCD_Port_init();            // Init the LCD1602
     LCD_Init();
@@ -30,8 +30,8 @@ void main(void)
         case 49:start();LCD_Write_str(7,0,"ON ");LCD_Write_str(7,1,"0");break;
         case 50:speed(1);LCD_Display_num(7,1,1);break;
         case 51:speed(2);LCD_Display_num(7,1,2);break;
-        case 52:speed(2);LCD_Display_num(7,1,3);break;
-        case 53:stop();LCD_Write_str(7,0,"OFF");LCD_Write_str(7,1," "); break;
+        case 52:speed(3);LCD_Display_num(7,1,3);break;
+        case 53:stop();LCD_Write_str(7,0,"OFF");LCD_Write_str(7,1," ");break;
         default:break;
         }
         key=0;
