@@ -12,7 +12,7 @@ __interrupt void USART0_RX_ISR(void)
 {
   unsigned char data=0;
   data=U0RXBUF;                       //接收到的数据存起来
-  Uart0Send_Byte(data);                    //将接收到的数据再发送出去
+  Uart0Send_Byte(data);               //将接收到的数据再发送出去
 
 }
 

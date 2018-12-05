@@ -12,7 +12,8 @@
  */
 
 int shu = 0;
-
+uchar cishu = 0;
+int chushi = 0;
 /**
  * main.c
  */
@@ -26,6 +27,11 @@ void main(void)
     while(1){
         Uart0Send_Byte(0x65);
         shu = HX711_Read();
+        if(cishu<5){
+            chushi = shu;
+            cishu++;
+        }
+        shu = shu-chushi;
         sprintf(data,"%d",shu);
         for(z=0;z<10;z++)
             Uart0Send_Byte(data[z]);

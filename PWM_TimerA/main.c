@@ -4,10 +4,11 @@
 /**
  * main.c
  */
+
 void main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
-	PWM_Init(1, 1, 2, 10000, 8250);
+	PWM_Init(0, 1, 1, 10000, 8000);
     P6DIR = 0xff;
     P6OUT = 0xFF;
 	while(1){

@@ -1,0 +1,1 @@
+"./12864.obj" "./DS1302.obj" "./DS18B20.obj" "./UART.obj" "./clock.obj" "./config.obj" "./electrical.obj" "./keypd.obj" "./main.obj" "./miaobiao.obj" "../lnk_msp430f169.cmd" -llibc.a 

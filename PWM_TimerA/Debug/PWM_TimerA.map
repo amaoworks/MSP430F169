@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.3                     
 ******************************************************************************
->> Linked Wed Nov 28 15:09:42 2018
+>> Linked Wed Dec  5 13:30:18 2018
 
 OUTPUT FILE NAME:   <PWM_TimerA.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 000011e0
