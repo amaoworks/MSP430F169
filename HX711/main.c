@@ -3,12 +3,15 @@
 #include "Config.h"
 #include "UART.h"
 #include "HX711.h"
+#include "IIC.h"
+//#include "OLED.h"
 
 /*
  * 暂时使用串口显示数据，发现问题有，压得越重数值越小！
  * 需要解决！
  * 压的问题解决，现在解决示数问题！
- * 15:32
+ * 示数问题解决，现在解决OLED显示问题，暂时无其他问题。
+ * OLED显示出现问题，想改数据口使用12864或1602显示，或者使用SPI接口的OLED显示。
  */
 
 int shu = 0;
@@ -22,20 +25,23 @@ void main(void)
     WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
     Clock_Init();
     UART0_Init();
+//    OLED_init();
+//    clearOLED();
     unsigned char data[10];
     int z = 0;
     while(1){
-        Uart0Send_Byte(0x65);
         shu = HX711_Read();
         if(cishu<5){
             chushi = shu;
             cishu++;
         }
         shu = shu-chushi;
+//        OLED_ShowNum(0,0,shu,5);
         sprintf(data,"%d",shu);
         for(z=0;z<10;z++)
             Uart0Send_Byte(data[z]);
         delay_ms(100);
+//        NewClear(1);
     }
 }
 

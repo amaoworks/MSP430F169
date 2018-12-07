@@ -10,6 +10,9 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./BH1750.obj" \
+"./Config.obj" \
+"./LCD.obj" \
 "./main.obj" \
 "../lnk_msp430f169.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -154,8 +157,8 @@ BH1750.txt: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" 
-	-$(RM) "main.d" 
+	-$(RM) "BH1750.obj" "Config.obj" "LCD.obj" "main.obj" 
+	-$(RM) "BH1750.d" "Config.d" "LCD.d" "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

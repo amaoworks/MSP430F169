@@ -1,1 +1,1 @@
-"./main.obj" "../lnk_msp430f169.cmd" -llibc.a 
+"./BH1750.obj" "./Config.obj" "./LCD.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 

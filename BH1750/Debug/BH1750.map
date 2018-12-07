@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.3                     
 ******************************************************************************
->> Linked Sun Dec  2 17:23:25 2018
+>> Linked Wed Dec  5 21:11:18 2018
 
 OUTPUT FILE NAME:   <BH1750.out>
-ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00001516
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000152e
 
 
 MEMORY CONFIGURATION
@@ -17,7 +17,7 @@ MEMORY CONFIGURATION
   RAM                   00000200   00000800  0000005f  000007a1  RWIX
   INFOB                 00001000   00000080  00000000  00000080  RWIX
   INFOA                 00001080   00000080  00000000  00000080  RWIX
-  FLASH                 00001100   0000eee0  0000055c  0000e984  RWIX
+  FLASH                 00001100   0000eee0  00000590  0000e950  RWIX
   INT00                 0000ffe0   00000002  00000002  00000000  RWIX
   INT01                 0000ffe2   00000002  00000002  00000000  RWIX
   INT02                 0000ffe4   00000002  00000002  00000000  RWIX
@@ -54,45 +54,46 @@ section   page    origin      length       input sections
                   000009b0    00000002     rts430_eabi.lib : boot.c.obj (.stack)
                   000009b2    0000004e     --HOLE--
 
-.text      0    00001100    00000552     
-                  00001100    000000b4     main.obj (.text:inmaindispaly)
-                  000011b4    00000084     main.obj (.text:main)
-                  00001238    00000080     main.obj (.text:conversion)
-                  000012b8    00000052     main.obj (.text:write_date)
-                  0000130a    00000046     main.obj (.text:write_com)
-                  00001350    00000044     main.obj (.text:init)
-                  00001394    00000042     rts430_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
-                  000013d6    0000003c     main.obj (.text:Multiple_Read_BH1750)
-                  00001412    0000003a     main.obj (.text:BH1750_RecvByte)
-                  0000144c    00000034     main.obj (.text:BH1750_RecvACK)
-                  00001480    0000002e     main.obj (.text:Clock_Init)
-                  000014ae    00000024     main.obj (.text:BH1750_SendByte)
-                  000014d2    00000022     main.obj (.text:BH1750_SendACK)
-                  000014f4    00000022     main.obj (.text:mnack)
-                  00001516    0000001c     rts430_eabi.lib : boot.c.obj (.text:_c_int00_noargs)
-                  00001532    0000001a     main.obj (.text:BH1750_Start)
-                  0000154c    0000001a     main.obj (.text:Single_Write_BH1750)
-                  00001566    00000016     main.obj (.text:BH1750_Stop)
-                  0000157c    00000016     rts430_eabi.lib : div16u.asm.obj (.text)
-                  00001592    00000016     main.obj (.text:write0)
-                  000015a8    00000016     main.obj (.text:write1)
-                  000015be    00000014     main.obj (.text:Delay5us)
-                  000015d2    00000014     rts430_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
-                  000015e6    00000014     main.obj (.text:port_init)
-                  000015fa    00000012     main.obj (.text:I2C_init)
-                  0000160c    00000010     main.obj (.text:DisplayOneChar)
-                  0000161c    00000010     rts430_eabi.lib : epilog.asm.obj (.text)
-                  0000162c    0000000a     main.obj (.text:LED_init)
-                  00001636    00000008     main.obj (.text:Init_BH1750)
-                  0000163e    00000008     rts430_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
-                  00001646    00000006                     : exit.c.obj (.text:abort)
-                  0000164c    00000004                     : pre_init.c.obj (.text:_system_pre_init)
-                  00001650    00000002                     : startup.c.obj (.text:_system_post_cinit)
+.text      0    00001100    00000586     
+                  00001100    000000b4     LCD.obj (.text:inmaindispaly)
+                  000011b4    0000009c     main.obj (.text:main)
+                  00001250    00000080     BH1750.obj (.text:conversion)
+                  000012d0    00000052     LCD.obj (.text:write_date)
+                  00001322    00000046     LCD.obj (.text:write_com)
+                  00001368    00000044     LCD.obj (.text:init)
+                  000013ac    00000042     rts430_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000013ee    0000003c     BH1750.obj (.text:Multiple_Read_BH1750)
+                  0000142a    0000003a     BH1750.obj (.text:BH1750_RecvByte)
+                  00001464    00000034     BH1750.obj (.text:BH1750_RecvACK)
+                  00001498    0000002e     Config.obj (.text:Clock_Init)
+                  000014c6    00000024     BH1750.obj (.text:BH1750_SendByte)
+                  000014ea    00000022     BH1750.obj (.text:BH1750_SendACK)
+                  0000150c    00000022     BH1750.obj (.text:mnack)
+                  0000152e    0000001c     rts430_eabi.lib : boot.c.obj (.text:_c_int00_noargs)
+                  0000154a    0000001c     BH1750.obj (.text:delay)
+                  00001566    0000001a     BH1750.obj (.text:BH1750_Start)
+                  00001580    0000001a     BH1750.obj (.text:Single_Write_BH1750)
+                  0000159a    00000016     BH1750.obj (.text:BH1750_Stop)
+                  000015b0    00000016     rts430_eabi.lib : div16u.asm.obj (.text)
+                  000015c6    00000016     BH1750.obj (.text:write0)
+                  000015dc    00000016     BH1750.obj (.text:write1)
+                  000015f2    00000014     BH1750.obj (.text:Delay5us)
+                  00001606    00000014     rts430_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  0000161a    00000014     LCD.obj (.text:port_init)
+                  0000162e    00000012     BH1750.obj (.text:I2C_init)
+                  00001640    00000010     LCD.obj (.text:DisplayOneChar)
+                  00001650    00000010     rts430_eabi.lib : epilog.asm.obj (.text)
+                  00001660    0000000a     BH1750.obj (.text:LED_init)
+                  0000166a    00000008     BH1750.obj (.text:Init_BH1750)
+                  00001672    00000008     rts430_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000167a    00000006                     : exit.c.obj (.text:abort)
+                  00001680    00000004                     : pre_init.c.obj (.text:_system_pre_init)
+                  00001684    00000002                     : startup.c.obj (.text:_system_post_cinit)
 
-.cinit     0    00001652    0000000a     
-                  00001652    00000004     (.cinit..bss.load) [load image, compression = zero_init]
-                  00001656    00000002     (__TI_handler_table)
-                  00001658    00000004     (__TI_cinit_table)
+.cinit     0    00001686    0000000a     
+                  00001686    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  0000168a    00000002     (__TI_handler_table)
+                  0000168c    00000004     (__TI_cinit_table)
 
 .binit     0    00001100    00000000     
 
@@ -153,9 +154,12 @@ MODULE SUMMARY
        Module                 code   ro data   rw data
        ------                 ----   -------   -------
     .\
-       main.obj               1190   0         15     
+       BH1750.obj             604    0         0      
+       LCD.obj                436    0         0      
+       main.obj               156    0         15     
+       Config.obj             46     0         0      
     +--+----------------------+------+---------+---------+
-       Total:                 1190   0         15     
+       Total:                 1242   0         15     
                                                       
     D:\Learn\CCS\ccsv8\tools\compiler\ti-cgt-msp430_18.1.3.LTS\lib\rts430_eabi.lib
        autoinit.c.obj         66     0         0      
@@ -188,18 +192,18 @@ MODULE SUMMARY
        Stack:                 0      0         80     
        Linker Generated:      0      10        0      
     +--+----------------------+------+---------+---------+
-       Grand Total:           1362   42        95     
+       Grand Total:           1414   42        95     
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00001658 records: 1, size/record: 4, table size: 4
-	.bss: load addr=00001652, load size=00000004 bytes, run addr=00000200, run size=0000000f bytes, compression=zero_init
+__TI_cinit_table @ 0000168c records: 1, size/record: 4, table size: 4
+	.bss: load addr=00001686, load size=00000004 bytes, run addr=00000200, run size=0000000f bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00001656 records: 1, size/record: 2, table size: 2
+__TI_handler_table @ 0000168a records: 1, size/record: 2, table size: 2
 	index: 0, handler: __TI_zero_init
 
 
@@ -246,18 +250,18 @@ address   name
 00000152  ADC12MEM9                     
 00000057  BCSCTL1                       
 00000058  BCSCTL2                       
-0000144c  BH1750_RecvACK                
-00001412  BH1750_RecvByte               
-000014d2  BH1750_SendACK                
-000014ae  BH1750_SendByte               
-00001532  BH1750_Start                  
-00001566  BH1750_Stop                   
+00001464  BH1750_RecvACK                
+0000142a  BH1750_RecvByte               
+000014ea  BH1750_SendACK                
+000014c6  BH1750_SendByte               
+00001566  BH1750_Start                  
+0000159a  BH1750_Stop                   
 00000200  BUF                           
-00001646  C$$EXIT                       
+0000167a  C$$EXIT                       
 00000059  CACTL1                        
 0000005a  CACTL2                        
 0000005b  CAPD                          
-00001480  Clock_Init                    
+00001498  Clock_Init                    
 000001c0  DAC12_0CTL                    
 000001c8  DAC12_0DAT                    
 000001c2  DAC12_1CTL                    
@@ -277,8 +281,8 @@ address   name
 000001f6  DMA2SZ                        
 00000122  DMACTL0                       
 00000124  DMACTL1                       
-000015be  Delay5us                      
-0000160c  DisplayOneChar                
+000015f2  Delay5us                      
+00001640  DisplayOneChar                
 00000128  FCTL1                         
 0000012a  FCTL2                         
 0000012c  FCTL3                         
@@ -295,20 +299,20 @@ address   name
 00000074  I2CSCLH                       
 00000075  I2CSCLL                       
 00000071  I2CTCTL                       
-000015fa  I2C_init                      
+0000162e  I2C_init                      
 00000000  IE1                           
 00000001  IE2                           
 00000002  IFG1                          
 00000003  IFG2                          
-00001636  Init_BH1750                   
-0000162c  LED_init                      
+0000166a  Init_BH1750                   
+00001660  LED_init                      
 00000134  MAC                           
 00000136  MACS                          
 00000004  ME1                           
 00000005  ME2                           
 00000130  MPY                           
 00000132  MPYS                          
-000013d6  Multiple_Read_BH1750          
+000013ee  Multiple_Read_BH1750          
 00000138  OP2                           
 00000022  P1DIR                         
 00000025  P1IE                          
@@ -344,7 +348,7 @@ address   name
 0000013a  RESLO                         
 0000013e  SUMEXT                        
 00000055  SVSCTL                        
-0000154c  Single_Write_BH1750           
+00001580  Single_Write_BH1750           
 00000172  TACCR0                        
 00000174  TACCR1                        
 00000176  TACCR2                        
@@ -390,12 +394,12 @@ address   name
 00000120  WDTCTL                        
 00000a00  __STACK_END                   
 00000050  __STACK_SIZE                  
-00001658  __TI_CINIT_Base               
-0000165c  __TI_CINIT_Limit              
-00001656  __TI_Handler_Table_Base       
-00001658  __TI_Handler_Table_Limit      
-0000163e  __TI_ISR_TRAP                 
-00001394  __TI_auto_init_nobinit_nopinit
+0000168c  __TI_CINIT_Base               
+00001690  __TI_CINIT_Limit              
+0000168a  __TI_Handler_Table_Base       
+0000168c  __TI_Handler_Table_Limit      
+00001672  __TI_ISR_TRAP                 
+000013ac  __TI_auto_init_nobinit_nopinit
 0000ffe0  __TI_int00                    
 0000ffe2  __TI_int01                    
 0000ffe4  __TI_int02                    
@@ -414,39 +418,40 @@ address   name
 ffffffff  __TI_pprof_out_hndl           
 ffffffff  __TI_prof_data_size           
 ffffffff  __TI_prof_data_start          
-000015d2  __TI_zero_init_nomemset       
+00001606  __TI_zero_init_nomemset       
 ffffffff  __c_args__                    
-0000157c  __mspabi_divu                 
-00001628  __mspabi_func_epilog_1        
-00001626  __mspabi_func_epilog_2        
-00001624  __mspabi_func_epilog_3        
-00001622  __mspabi_func_epilog_4        
-00001620  __mspabi_func_epilog_5        
-0000161e  __mspabi_func_epilog_6        
-0000161c  __mspabi_func_epilog_7        
-0000157c  __mspabi_remu                 
-00001516  _c_int00_noargs               
+000015b0  __mspabi_divu                 
+0000165c  __mspabi_func_epilog_1        
+0000165a  __mspabi_func_epilog_2        
+00001658  __mspabi_func_epilog_3        
+00001656  __mspabi_func_epilog_4        
+00001654  __mspabi_func_epilog_5        
+00001652  __mspabi_func_epilog_6        
+00001650  __mspabi_func_epilog_7        
+000015b0  __mspabi_remu                 
+0000152e  _c_int00_noargs               
 0000fffe  _reset_vector                 
 000009b0  _stack                        
-00001650  _system_post_cinit            
-0000164c  _system_pre_init              
-00001646  abort                         
+00001684  _system_post_cinit            
+00001680  _system_pre_init              
+0000167a  abort                         
 0000020a  bai                           
-00001238  conversion                    
+00001250  conversion                    
+0000154a  delay                         
 00000208  dis_data                      
 0000020b  ge                            
-00001350  init                          
+00001368  init                          
 00001100  inmaindispaly                 
 000011b4  main                          
-000014f4  mnack                         
-000015e6  port_init                     
+0000150c  mnack                         
+0000161a  port_init                     
 0000020c  qian                          
 0000020d  shi                           
 0000020e  wan                           
-00001592  write0                        
-000015a8  write1                        
-0000130a  write_com                     
-000012b8  write_date                    
+000015c6  write0                        
+000015dc  write1                        
+00001322  write_com                     
+000012d0  write_date                    
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -630,49 +635,50 @@ address   name
 00000a00  __STACK_END                   
 00001100  inmaindispaly                 
 000011b4  main                          
-00001238  conversion                    
-000012b8  write_date                    
-0000130a  write_com                     
-00001350  init                          
-00001394  __TI_auto_init_nobinit_nopinit
-000013d6  Multiple_Read_BH1750          
-00001412  BH1750_RecvByte               
-0000144c  BH1750_RecvACK                
-00001480  Clock_Init                    
-000014ae  BH1750_SendByte               
-000014d2  BH1750_SendACK                
-000014f4  mnack                         
-00001516  _c_int00_noargs               
-00001532  BH1750_Start                  
-0000154c  Single_Write_BH1750           
-00001566  BH1750_Stop                   
-0000157c  __mspabi_divu                 
-0000157c  __mspabi_remu                 
-00001592  write0                        
-000015a8  write1                        
-000015be  Delay5us                      
-000015d2  __TI_zero_init_nomemset       
-000015e6  port_init                     
-000015fa  I2C_init                      
-0000160c  DisplayOneChar                
-0000161c  __mspabi_func_epilog_7        
-0000161e  __mspabi_func_epilog_6        
-00001620  __mspabi_func_epilog_5        
-00001622  __mspabi_func_epilog_4        
-00001624  __mspabi_func_epilog_3        
-00001626  __mspabi_func_epilog_2        
-00001628  __mspabi_func_epilog_1        
-0000162c  LED_init                      
-00001636  Init_BH1750                   
-0000163e  __TI_ISR_TRAP                 
-00001646  C$$EXIT                       
-00001646  abort                         
-0000164c  _system_pre_init              
-00001650  _system_post_cinit            
-00001656  __TI_Handler_Table_Base       
-00001658  __TI_CINIT_Base               
-00001658  __TI_Handler_Table_Limit      
-0000165c  __TI_CINIT_Limit              
+00001250  conversion                    
+000012d0  write_date                    
+00001322  write_com                     
+00001368  init                          
+000013ac  __TI_auto_init_nobinit_nopinit
+000013ee  Multiple_Read_BH1750          
+0000142a  BH1750_RecvByte               
+00001464  BH1750_RecvACK                
+00001498  Clock_Init                    
+000014c6  BH1750_SendByte               
+000014ea  BH1750_SendACK                
+0000150c  mnack                         
+0000152e  _c_int00_noargs               
+0000154a  delay                         
+00001566  BH1750_Start                  
+00001580  Single_Write_BH1750           
+0000159a  BH1750_Stop                   
+000015b0  __mspabi_divu                 
+000015b0  __mspabi_remu                 
+000015c6  write0                        
+000015dc  write1                        
+000015f2  Delay5us                      
+00001606  __TI_zero_init_nomemset       
+0000161a  port_init                     
+0000162e  I2C_init                      
+00001640  DisplayOneChar                
+00001650  __mspabi_func_epilog_7        
+00001652  __mspabi_func_epilog_6        
+00001654  __mspabi_func_epilog_5        
+00001656  __mspabi_func_epilog_4        
+00001658  __mspabi_func_epilog_3        
+0000165a  __mspabi_func_epilog_2        
+0000165c  __mspabi_func_epilog_1        
+00001660  LED_init                      
+0000166a  Init_BH1750                   
+00001672  __TI_ISR_TRAP                 
+0000167a  C$$EXIT                       
+0000167a  abort                         
+00001680  _system_pre_init              
+00001684  _system_post_cinit            
+0000168a  __TI_Handler_Table_Base       
+0000168c  __TI_CINIT_Base               
+0000168c  __TI_Handler_Table_Limit      
+00001690  __TI_CINIT_Limit              
 0000ffe0  __TI_int00                    
 0000ffe2  __TI_int01                    
 0000ffe4  __TI_int02                    
@@ -694,4 +700,4 @@ ffffffff  __TI_prof_data_size
 ffffffff  __TI_prof_data_start          
 ffffffff  __c_args__                    
 
-[240 symbols]
+[241 symbols]

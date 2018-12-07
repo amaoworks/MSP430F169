@@ -1,1 +1,1 @@
-"./Config.obj" "./HX711.obj" "./UART.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 
+"./Config.obj" "./HX711.obj" "./IIC.obj" "./OLED.obj" "./UART.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 

@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS
+CG_TOOL_ROOT := D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -143,14 +143,14 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 OLED_Models.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/cl430" -vmsp --use_hw_mpy=16 --advice:power=all --define=__MSP430F169__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"OLED_Models.map" --heap_size=80 --stack_size=80 -i"D:/Learn/CCS/ccsv8/ccs_base/msp430/include" -i"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/lib" -i"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="OLED_Models_linkInfo.xml" --use_hw_mpy=16 --rom_model -o "OLED_Models.out" $(ORDERED_OBJS)
+	"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/bin/cl430" -vmsp --use_hw_mpy=16 --advice:power=all --define=__MSP430F169__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"OLED_Models.map" --heap_size=80 --stack_size=80 -i"D:/Learn/CCS/ccsv8/ccs_base/msp430/include" -i"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/lib" -i"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="OLED_Models_linkInfo.xml" --use_hw_mpy=16 --rom_model -o "OLED_Models.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 OLED_Models.txt: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: MSP430 Hex Utility'
-	"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/bin/hex430" --memwidth=8 --romwidth=8 --ti_txt -o "OLED_Models.txt" $(EXE_OUTPUTS__QUOTED)
+	"D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.4.LTS/bin/hex430" --memwidth=8 --romwidth=8 --ti_txt -o "OLED_Models.txt" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 

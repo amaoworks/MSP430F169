@@ -9,6 +9,7 @@ CMD_SRCS += \
 ../lnk_msp430f169.cmd 
 
 C_SRCS += \
+../ADC.c \
 ../Config.c \
 ../Key.c \
 ../LCD.c \
@@ -17,6 +18,7 @@ C_SRCS += \
 ../main.c 
 
 C_DEPS += \
+./ADC.d \
 ./Config.d \
 ./Key.d \
 ./LCD.d \
@@ -25,6 +27,7 @@ C_DEPS += \
 ./main.d 
 
 OBJS += \
+./ADC.obj \
 ./Config.obj \
 ./Key.obj \
 ./LCD.obj \
@@ -33,6 +36,7 @@ OBJS += \
 ./main.obj 
 
 OBJS__QUOTED += \
+"ADC.obj" \
 "Config.obj" \
 "Key.obj" \
 "LCD.obj" \
@@ -41,6 +45,7 @@ OBJS__QUOTED += \
 "main.obj" 
 
 C_DEPS__QUOTED += \
+"ADC.d" \
 "Config.d" \
 "Key.d" \
 "LCD.d" \
@@ -49,6 +54,7 @@ C_DEPS__QUOTED += \
 "main.d" 
 
 C_SRCS__QUOTED += \
+"../ADC.c" \
 "../Config.c" \
 "../Key.c" \
 "../LCD.c" \

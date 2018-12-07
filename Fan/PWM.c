@@ -7,6 +7,7 @@
 #include "PWM.h"
 
 extern unsigned int a;
+extern unsigned int long TemperC;
 
 void PWM_init(){
     P1DIR = 0xff;                   // P1Êä³ö
@@ -49,4 +50,20 @@ void speed(unsigned char shift){
     CCR0 = 20000;
     CCR1 = a;
     P1DIR |= BIT2;
+}
+
+void Smart_speed(){
+    start();
+    if(TemperC > 20 && TemperC < 25){
+        speed(2);
+        delay_ms(100);
+        speed(1);
+    }
+    if(TemperC > 20 && TemperC < 25){
+        speed(3);
+        delay_ms(100);
+        speed(2);
+        delay_ms(100);
+        speed(1);
+    }
 }

@@ -10,6 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./ADC.obj" \
 "./Config.obj" \
 "./Key.obj" \
 "./LCD.obj" \
@@ -159,8 +160,8 @@ Fan.txt: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Config.obj" "Key.obj" "LCD.obj" "PWM.obj" "UART.obj" "main.obj" 
-	-$(RM) "Config.d" "Key.d" "LCD.d" "PWM.d" "UART.d" "main.d" 
+	-$(RM) "ADC.obj" "Config.obj" "Key.obj" "LCD.obj" "PWM.obj" "UART.obj" "main.obj" 
+	-$(RM) "ADC.d" "Config.d" "Key.d" "LCD.d" "PWM.d" "UART.d" "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -11,36 +11,48 @@ CMD_SRCS += \
 C_SRCS += \
 ../Config.c \
 ../HX711.c \
+../IIC.c \
+../OLED.c \
 ../UART.c \
 ../main.c 
 
 C_DEPS += \
 ./Config.d \
 ./HX711.d \
+./IIC.d \
+./OLED.d \
 ./UART.d \
 ./main.d 
 
 OBJS += \
 ./Config.obj \
 ./HX711.obj \
+./IIC.obj \
+./OLED.obj \
 ./UART.obj \
 ./main.obj 
 
 OBJS__QUOTED += \
 "Config.obj" \
 "HX711.obj" \
+"IIC.obj" \
+"OLED.obj" \
 "UART.obj" \
 "main.obj" 
 
 C_DEPS__QUOTED += \
 "Config.d" \
 "HX711.d" \
+"IIC.d" \
+"OLED.d" \
 "UART.d" \
 "main.d" 
 
 C_SRCS__QUOTED += \
 "../Config.c" \
 "../HX711.c" \
+"../IIC.c" \
+"../OLED.c" \
 "../UART.c" \
 "../main.c" 
 

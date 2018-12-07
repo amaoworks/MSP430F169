@@ -12,5 +12,6 @@ void PWM_init();
 void start();
 void stop();
 void speed(unsigned char shift);
+void Smart_speed();
 
 #endif /* PWM_H_ */

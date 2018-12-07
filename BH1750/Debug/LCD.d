@@ -1,0 +1,19 @@
+# FIXED
+
+LCD.obj: ../LCD.c
+LCD.obj: ../LCD.h
+LCD.obj: ../BH1750.h
+LCD.obj: ../Config.h
+LCD.obj: D:/Learn/CCS/ccsv8/ccs_base/msp430/include/msp430f169.h
+LCD.obj: D:/Learn/CCS/ccsv8/ccs_base/msp430/include/in430.h
+LCD.obj: D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/intrinsics.h
+LCD.obj: D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/intrinsics_legacy_undefs.h
+
+../LCD.c: 
+../LCD.h: 
+../BH1750.h: 
+../Config.h: 
+D:/Learn/CCS/ccsv8/ccs_base/msp430/include/msp430f169.h: 
+D:/Learn/CCS/ccsv8/ccs_base/msp430/include/in430.h: 
+D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/intrinsics.h: 
+D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/intrinsics_legacy_undefs.h: 

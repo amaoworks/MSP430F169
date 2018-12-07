@@ -12,6 +12,8 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./Config.obj" \
 "./HX711.obj" \
+"./IIC.obj" \
+"./OLED.obj" \
 "./UART.obj" \
 "./main.obj" \
 "../lnk_msp430f169.cmd" \
@@ -157,8 +159,8 @@ HX711.txt: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Config.obj" "HX711.obj" "UART.obj" "main.obj" 
-	-$(RM) "Config.d" "HX711.d" "UART.d" "main.d" 
+	-$(RM) "Config.obj" "HX711.obj" "IIC.obj" "OLED.obj" "UART.obj" "main.obj" 
+	-$(RM) "Config.d" "HX711.d" "IIC.d" "OLED.d" "UART.d" "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

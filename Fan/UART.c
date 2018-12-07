@@ -6,6 +6,9 @@
  */
 #include "UART.h"
 
+extern unsigned char key;
+extern unsigned char ths;
+
 void UART0_Init()
 {
   U0CTL|=SWRST;               //复位SWRST
@@ -30,4 +33,21 @@ void Uart0Send_Byte(unsigned char data)
 {
   while((IFG1&UTXIFG0)==0);          //发送寄存器空的时候发送数据
     U0TXBUF=data;
+}
+
+#pragma vector=USART0RX_VECTOR
+__interrupt void USART0_RX_ISR(void)
+{
+  unsigned char data=0;
+  data=U0RXBUF;                       //接收到的数据存起来
+  key = data;
+  ths=0;
+  Uart0Send_Byte(data);               //将接收到的数据再发送出去
+
+}
+
+#pragma vector=USART0TX_VECTOR
+__interrupt void USART0_TX_ISR(void)
+{
+
 }

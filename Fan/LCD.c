@@ -108,7 +108,7 @@ void LCD_Write_str(unsigned char x, unsigned char y, unsigned char *s){
 }
 
 void LCD_Desk(){
-    LCD_Write_str(0,0,"Statu:");
+    LCD_Write_str(0,0,"Statu:      Temp");
     LCD_Write_str(0,1,"Speed:");
 }
 
