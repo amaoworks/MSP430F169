@@ -1,0 +1,1 @@
+"./Config.obj" "./Key.obj" "./LCD.obj" "./LED.obj" "./SRF05.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 
