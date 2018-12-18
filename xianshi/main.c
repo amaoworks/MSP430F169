@@ -81,60 +81,6 @@ void main(void)
     delay_ms(200);
     LCD_PutString24(83,170,"功能1:",Yellow,Magenta);
     delay_ms(300);
-//    LCD_PutString24(107,170,"功能2:",Yellow,Magenta);
-//    delay_ms(300);
-//    LCD_PutString24(131,170,"功能3:",Yellow,Magenta);
-//    delay_ms(300);
-    /*LCD_PutString(69,300,"www.avrgcc.com",White,Magenta);  //字符显示官方网站
-    delay_ms(300);
-
-    CLR_Screen(Black);                                     //用背景色清屏
-
-    for(y=0;y<10;y++)
-    {
-      LCD_PutString(52,y*32,"欣创电子,与您同行",White,Black);      //汉字显示
-      delay_ms(30);
-    }
-    delay_ms(300);
-
-    CLR_Screen(Black);                                             //用背景色清屏
-    for(y=0;y<10;y++)
-    {
-      LCD_PutString(24,y*32,"宁波欣创电子科技有限公司",White,Black);      //汉字显示
-      delay_ms(30);
-    }
-    delay_ms(300);
-
-    Show_RGB(0,240,0,64,Blue);                              //5种颜色将屏分为5个区域
-    Show_RGB(0,240,64,128,Green);
-    Show_RGB(0,240,128,192,Magenta);
-    Show_RGB(0,240,192,256,Red);
-    Show_RGB(0,240,256,320,Yellow);
-
-    LCD_PutString(24,16,"宁波欣创电子科技有限公司",White,Blue);//第1个区域显示16x16汉字
-    LCD_PutString(24,40,"   欣创科技,与您同行",White,Blue);
-
-    LCD_PutString(80,72,"0123456789",Black,Green);            //第2个区域显示ascii字符中的数字和符号
-    LCD_PutString(16,96,",,`,./<>';:[]{}\|?-=+*&^%$",Black,Green);
-
-    LCD_PutString(16,136,"abcdefghijklmnopqrstuvwxyz",Blue,Magenta);//第3个区域显示ascii字符中字母
-    LCD_PutString(16,156,"ABCDEFGHIJKLMNOPQRSTUVWXYZ",Blue,Magenta);
-
-    LCD_PutString(16,200,"The Device IC Of TFT Is:",Black,Red);    //第4个区域显示TFT控制器IC型号
-    LCD_PutString(96,224,"ILI",Black,Red);
-    LCD_PutChar(120, 224, 0x30+(Device_code>>12), Black, Red);
-    LCD_PutChar(128, 224, 0x30+((Device_code>>8)&0x000f), Black, Red);
-    LCD_PutChar(136, 224, 0x30+((Device_code>>4)&0x000f), Black, Red);
-    LCD_PutChar(144, 224, 0x30+(Device_code&0x000f), Black, Red);
-
-    for(i=312;i>264;i--){ Put_pixel(68,i,Blue);}                   //第5个区域打点实现画线
-    for(i=68;i<172;i++) { Put_pixel(i,264,Blue);}
-    for(i=264;i<312;i++){ Put_pixel(172,i,Blue);}
-    for(i=172;i>68;i--) { Put_pixel(i,312,Blue);}
-
-    delay_ms(2000);                                              //显示一段时间
-    CLR_Screen(Red); */                                             //用背景色清屏
-   //}
 
 
 }
