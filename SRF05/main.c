@@ -15,7 +15,7 @@ unsigned char Edge=1;                 //当前触发沿
 unsigned char disbuff[4]="0.00";
 unsigned char temp,A1,A2,A3,A4,A5,A6,A7,A8;            //定义的变量,显示数据处理
 unsigned long safe;
-
+//Trig脚接P14，Echo脚接P12
 /**
  * main.c
  */
@@ -48,7 +48,7 @@ void main()
 
         LCD_DisplayDistance(S);      //动态显示距离，单位m
         LCD_DisplaySafe(safe);
-        if(S>(safe+300)||S<(safe-300)){
+        if(S>(safe+50)||S<(safe-50)){
             LED8 &= ~(1<<0);
         }else{
             LED8 |= (1<<0);

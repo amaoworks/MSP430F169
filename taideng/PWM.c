@@ -59,17 +59,19 @@ void PWM_Init(unsigned char Clk, unsigned char Output, unsigned char Model, unsi
 }
 
 void Light(){
+    LCD_PutString(80,124,"手动模式",GBLUE,BLACK);
+    LCD_PutString(60,180,"台灯状态:",GBLUE,BLACK);
     if(key == 0){
         PWM_Init(1, 1, 1, 10000, 0);
-        LCD_PutString(32,64,"关闭",BLACK,MAGENTA);
+        LCD_PutString(140,180,"关闭",YELLOW,BLACK);
     }else if(key == 1){
         PWM_Init(1, 1, 1, 10000, 3000);
-        LCD_PutString(32,64,"一挡",BLACK,MAGENTA);
+        LCD_PutString(140,180,"一挡",YELLOW,BLACK);
     }else if(key == 2){
         PWM_Init(1, 1, 1, 10000, 6000);
-        LCD_PutString(32,64,"二挡",BLACK,MAGENTA);
+        LCD_PutString(140,180,"二挡",YELLOW,BLACK);
     }else if(key == 3){
         PWM_Init(1, 1, 1, 10000, 10000);
-        LCD_PutString(32,64,"三挡",BLACK,MAGENTA);
+        LCD_PutString(140,180,"三挡",YELLOW,BLACK);
     }
 }

@@ -11,31 +11,37 @@ CMD_SRCS += \
 C_SRCS += \
 ../SPI.c \
 ../TFT.c \
+../Touch.c \
 ../main.c 
 
 C_DEPS += \
 ./SPI.d \
 ./TFT.d \
+./Touch.d \
 ./main.d 
 
 OBJS += \
 ./SPI.obj \
 ./TFT.obj \
+./Touch.obj \
 ./main.obj 
 
 OBJS__QUOTED += \
 "SPI.obj" \
 "TFT.obj" \
+"Touch.obj" \
 "main.obj" 
 
 C_DEPS__QUOTED += \
 "SPI.d" \
 "TFT.d" \
+"Touch.d" \
 "main.d" 
 
 C_SRCS__QUOTED += \
 "../SPI.c" \
 "../TFT.c" \
+"../Touch.c" \
 "../main.c" 
 
 

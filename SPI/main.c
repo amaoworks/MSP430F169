@@ -1,6 +1,7 @@
 #include <msp430f169.h>
 #include "SPI.h"
 #include "TFT.h"
+#include "Touch.h"
 #define CPU_F ((double)8000000)
 #define delay_us(x) __delay_cycles((long)(CPU_F*(double)x/1000000.0))
 #define delay_ms(x) __delay_cycles((long)(CPU_F*(double)x/1000.0))
@@ -29,9 +30,12 @@ void main(void)
     init_spi();
     TFT_port_init();
     TFT_init();
+    start_7843();
     LCD_Clear(GREEN);
     Show_Image(0,80,0,80,gImage_xiaohui);
     LCD_PutString24(0,200,"ÕýÏÒ²¨",RED,GREEN);
-    while(1);
+    while(1){
+        if(Getpix()==1)   Put_pixel(lx,ly,WHITE);
+    }
 }
 

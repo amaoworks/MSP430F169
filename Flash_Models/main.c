@@ -5,8 +5,6 @@
 unsigned long b = 0;
 unsigned char c;
 
-
-
 //unsigned int InfoB = 1000;
 void main( void )
 {

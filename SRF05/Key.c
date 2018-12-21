@@ -24,6 +24,9 @@ __interrupt void p1init(void)   //注意：interrupt前的下划线是两条，不是一条！！
 
     if((P1IN&BIT1)==0){
         safe-=100;
+        if(safe <= 100){
+            safe = 100;
+        }
     }
 
     P1IFG=0;//中断标志位清零！！！P1端口外部中断不会自动清零，所以需要手动清零

@@ -20,7 +20,7 @@ void Clock_Init();
 
 #define InfoB  (0x1000)
 unsigned char key;
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 //Test For Display Info From Flash By 1602
 //延时函数，IAR自带，经常使用到
 #define CPU_F ((double)8000000)   //外部高频晶振8MHZ
