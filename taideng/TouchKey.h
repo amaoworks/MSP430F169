@@ -11,5 +11,6 @@
 void touchMain();
 void touchBack();
 void touchButton();
+void touchVoice();
 
 #endif /* TOUCHKEY_H_ */

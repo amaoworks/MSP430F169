@@ -90,7 +90,7 @@ void main(void)
         Y/=16.4;
         Display_Num(6,0,Y);
         BUF[4]=i2c_read(0x3F);
-        BUF[5]=i2c_read(0x40);
+        BUF[5]=i2c_read(0x4D);
         Z1=(BUF[4]<<8)+BUF[5];
         Z1/=16.4;
         Display_Num(0,1,Z1);

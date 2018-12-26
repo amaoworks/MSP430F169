@@ -15,11 +15,42 @@ unsigned int RiseCapVal;               //上升沿时刻捕获值存放变量
 unsigned char Edge=1;                 //当前触发沿 初始值为上升沿
 uchar    temp,A1,A2,A3,A4;            //定义的变量,显示数据处理
 unsigned char Temp_Value[7];
-unsigned char key, statu, open, clear;
+unsigned char key = 0, statu= 0, open= 0, clear= 0,voice= 0, enter= 0, out= 0;
 
 /**
  * main.c
  */
+
+void zidong(){
+    if(voice == 0)
+        Show_Image(170,210,114,154,gImage_hlaba);
+    else if(voice == 1)
+        Show_Image(170,210,114,154,gImage_laba);
+    LCD_PutString(130,180,Temp_Value,YELLOW,BLACK);
+    if(open == 1){
+        out = 0;
+        PWM_Init(1, 1, 1, 10000, 10000);
+        LCD_PutString(140,210,"开启",YELLOW,BLACK);
+        if(enter == 0 && voice == 1){
+            P6OUT &= ~BIT0;
+            delay_ms(1000);
+            P6OUT |= BIT0;
+            enter = 1;
+        }
+    }
+    else{
+        enter = 0;
+        PWM_Init(1, 1, 1, 10000, 0);
+        LCD_PutString(140,210,"关闭",YELLOW,BLACK);
+        if(out == 0 && voice == 1){
+            P6OUT &= ~BIT1;
+            delay_ms(1000);
+            P6OUT |= BIT1;
+            out = 1;
+        }
+    }
+}
+
 void main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
@@ -38,10 +69,14 @@ void main(void)
     TACCTL1 |= CAP+CM_1+CCIS_0+SCS+CCIE;         //改为上升沿捕获
 
     _EINT();
-    statu = 0;
-    //statu  = 1;
-    clear  = 0;
-    key    = 0;
+    P6DIR = 0xff;
+    P6OUT |= BIT0 + BIT1;
+//    statu = 0;
+//    //statu  = 1;
+//    clear  = 0;
+//    voice  = 0;
+//
+//    key    = 0;
 
     //    LCD_PutString24(60,60,"智 能 台 灯",BLUE,MAGENTA);
     //    LCD_PutString(58,140,"按键S1:手动模式",YELLOW,MAGENTA);
@@ -65,6 +100,7 @@ void main(void)
         }
 
         if(statu == 0){
+            key=0;
             LCD_PutString24(60,60,"智 能 台 灯",BLUE,MAGENTA);
             LCD_PutString(88,140,"手动模式",YELLOW,MAGENTA);
             LCD_PutString(88,200,"自动模式",YELLOW,MAGENTA);
@@ -88,7 +124,7 @@ void main(void)
                 Light();
             }
         }else if(statu == 2){
-            key = 3;
+            key = 0;
             LCD_PutString(80,124,"自动模式",GBLUE,BLACK);
             LCD_PutString(60,180,"距离台灯",GBLUE,BLACK);
             LCD_PutString(60,210,"台灯状态:",GBLUE,BLACK);
@@ -104,15 +140,8 @@ void main(void)
                 Data_do(S);
                 Auto();
                 touchBack();
-                LCD_PutString(130,180,Temp_Value,YELLOW,BLACK);
-                if(open == 1){
-                    PWM_Init(1, 1, 1, 10000, 10000);
-                    LCD_PutString(140,210,"开启",YELLOW,BLACK);
-                }
-                else{
-                    PWM_Init(1, 1, 1, 10000, 0);
-                    LCD_PutString(140,210,"关闭",YELLOW,BLACK);
-                }
+                touchVoice();
+                zidong();
             }
         }
     }

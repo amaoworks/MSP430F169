@@ -6,7 +6,7 @@
  */
 #include "TouchKey.h"
 
-extern unsigned char key, statu, clear;
+extern unsigned char key, statu, clear, voice, enter, out;
 uint  LCD_X, LCD_Y;
 uint minX=78, maxX=162, minY=130, maxY=166;
 void touchMain(){
@@ -44,6 +44,22 @@ void touchButton(){
                 key++;
                 if(key == 4){
                     key = 0;
+                }
+                while(PEN==0);
+            }
+        }
+    }
+}
+
+void touchVoice(){
+    if(Getpix()==1){
+        if(LCD_X>177 && LCD_X<211){
+            if(LCD_Y>5744 && LCD_Y<5788){
+                enter = 0;
+                out = 0;
+                voice++;
+                if(voice==2){
+                    voice = 0;
                 }
                 while(PEN==0);
             }
