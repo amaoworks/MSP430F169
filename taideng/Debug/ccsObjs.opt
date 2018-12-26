@@ -1,1 +1,1 @@
-"./Config.obj" "./Key.obj" "./PWM.obj" "./SPI.obj" "./SRF05.obj" "./TFT.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 
+"./Config.obj" "./GUI.obj" "./PWM.obj" "./SPI.obj" "./SRF05.obj" "./TFT.obj" "./Touch.obj" "./TouchKey.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 

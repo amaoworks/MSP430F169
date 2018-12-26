@@ -10,6 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./GUI.obj" \
 "./SPI.obj" \
 "./TFT.obj" \
 "./Touch.obj" \
@@ -157,8 +158,8 @@ SPI.txt: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "SPI.obj" "TFT.obj" "Touch.obj" "main.obj" 
-	-$(RM) "SPI.d" "TFT.d" "Touch.d" "main.d" 
+	-$(RM) "GUI.obj" "SPI.obj" "TFT.obj" "Touch.obj" "main.obj" 
+	-$(RM) "GUI.d" "SPI.d" "TFT.d" "Touch.d" "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

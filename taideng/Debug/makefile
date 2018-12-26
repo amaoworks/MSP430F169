@@ -11,11 +11,13 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./Config.obj" \
-"./Key.obj" \
+"./GUI.obj" \
 "./PWM.obj" \
 "./SPI.obj" \
 "./SRF05.obj" \
 "./TFT.obj" \
+"./Touch.obj" \
+"./TouchKey.obj" \
 "./main.obj" \
 "../lnk_msp430f169.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -160,8 +162,8 @@ taideng.txt: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Config.obj" "Key.obj" "PWM.obj" "SPI.obj" "SRF05.obj" "TFT.obj" "main.obj" 
-	-$(RM) "Config.d" "Key.d" "PWM.d" "SPI.d" "SRF05.d" "TFT.d" "main.d" 
+	-$(RM) "Config.obj" "GUI.obj" "PWM.obj" "SPI.obj" "SRF05.obj" "TFT.obj" "Touch.obj" "TouchKey.obj" "main.obj" 
+	-$(RM) "Config.d" "GUI.d" "PWM.d" "SPI.d" "SRF05.d" "TFT.d" "Touch.d" "TouchKey.d" "main.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

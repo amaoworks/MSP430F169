@@ -52,8 +52,9 @@
 
 void LCD_write_command(unsigned char com);
 void TFT_port_init();
-void LCD_LCD_write_data8(unsigned char data);
-void LCD_LCD_write_data(unsigned int data);
+void LCD_write_data8(unsigned char data);
+void LCD_write_data(unsigned int data);
+void Address_set(unsigned int x1,unsigned int x2,unsigned int y1,unsigned int y2);
 void TFT_init();
 void LCD_Clear(unsigned int Color);
 void PutGB2424(unsigned short x, unsigned short  y, unsigned char c[2], unsigned int fColor,unsigned int bColor);

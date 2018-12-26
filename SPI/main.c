@@ -2,6 +2,8 @@
 #include "SPI.h"
 #include "TFT.h"
 #include "Touch.h"
+#include "GUI.h"
+
 #define CPU_F ((double)8000000)
 #define delay_us(x) __delay_cycles((long)(CPU_F*(double)x/1000000.0))
 #define delay_ms(x) __delay_cycles((long)(CPU_F*(double)x/1000.0))
@@ -32,8 +34,9 @@ void main(void)
     TFT_init();
     start_7843();
     LCD_Clear(GREEN);
-    Show_Image(0,80,0,80,gImage_xiaohui);
-    LCD_PutString24(0,200,"ÕýÏÒ²¨",RED,GREEN);
+    GUIsquare1pix(10,10,30,30,RED);
+//    Show_Image(0,80,0,80,gImage_xiaohui);
+//    LCD_PutString24(0,200,"ÕýÏÒ²¨",RED,GREEN);
     while(1){
         if(Getpix()==1)   Put_pixel(lx,ly,WHITE);
     }

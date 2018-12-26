@@ -62,6 +62,22 @@ void Data_do(uint temp_d)
   Temp_Value[6]=' ';
 }
 
+//void Data_do(uint temp_d)
+//{
+//  uint temp_1,temp_2;
+//  A1=temp_d/1000;                       //分出千，百，十，和个位
+//  temp_1=temp_d%1000;
+//  A2=temp_1/100;
+//  temp_2=temp_1%100;
+//  A3=temp_2/10;
+//  A4=temp_2%10;
+//
+//  Temp_Value[0]=A1+0x30;
+//  Temp_Value[1]=A2+0x30;
+//  Temp_Value[2]=A3+0x30;
+//  Temp_Value[3]=A3+0x30;
+//}
+
 void Auto(){
     if(S < 1000){
         open = 1;

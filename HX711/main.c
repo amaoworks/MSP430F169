@@ -31,11 +31,11 @@ void main(void)
     int z = 0;
     while(1){
         shu = HX711_Read();
-        if(cishu<5){
-            chushi = shu;
-            cishu++;
-        }
-        shu = shu-chushi;
+//        if(cishu<5){
+//            chushi = shu;
+//            cishu++;
+//        }
+//        shu = shu-chushi;
 //        OLED_ShowNum(0,0,shu,5);
         sprintf(data,"%d",shu);
         for(z=0;z<10;z++)

@@ -1,0 +1,1 @@
+"./I2C.obj" "./LCD.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 

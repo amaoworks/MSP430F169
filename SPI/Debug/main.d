@@ -12,6 +12,7 @@ main.obj: ../font16x16.h
 main.obj: ../font24x24.h
 main.obj: ../image.h
 main.obj: ../Touch.h
+main.obj: ../GUI.h
 
 ../main.c: 
 D:/Learn/CCS/ccsv8/ccs_base/msp430/include/msp430f169.h: 
@@ -25,3 +26,4 @@ D:/Learn/CCS/ccsv8/tools/compiler/ti-cgt-msp430_18.1.3.LTS/include/intrinsics_le
 ../font24x24.h: 
 ../image.h: 
 ../Touch.h: 
+../GUI.h: 
