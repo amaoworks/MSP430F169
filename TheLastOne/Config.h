@@ -19,6 +19,9 @@
 #define uint  unsigned int
 #define ulong unsigned long
 
+#define WakeDIR P1DIR
+#define Wake    P1OUT
+
 void Clock_Init();
 
 #endif /* CONFIG_H_ */

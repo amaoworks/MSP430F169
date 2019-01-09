@@ -47,7 +47,7 @@ void LCD_Portinit(){           //端口初始化
     P4SEL = 0x00;
     P4DIR = 0xff;
     P5SEL = 0x00;
-    P5DIR|=BIT5 + BIT6 + BIT7;
+    P5DIR|= BIT5 + BIT6 + BIT7;
 }
 
 void Display_Num(unsigned char x,unsigned char y,unsigned long num){        //数字显示

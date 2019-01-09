@@ -20,8 +20,8 @@
 #define ulong unsigned long
 
 //8个LED灯，连接在P6口，可通过断开电源停止使用，ADC使用时断开电源
-#define LED8DIR         P6DIR
-#define LED8            P6OUT                             //P6口接LED灯，8个
+#define LED8DIR         P2DIR
+#define LED8            P2OUT                             //P6口接LED灯，8个
 
 //4个独立按键连接在P10~P13
 #define KeyPort         P1IN                              //独立键盘接在P10~P13

@@ -1,0 +1,1 @@
+"./UART.obj" "./beep.obj" "./display.obj" "./golbal.obj" "./key.obj" "./led.obj" "./main.obj" "./process.obj" "../lnk_msp430f169.cmd" -llibc.a 

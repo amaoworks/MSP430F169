@@ -49,9 +49,9 @@ void main()
         LCD_DisplayDistance(S);      //动态显示距离，单位m
         LCD_DisplaySafe(safe);
         if(S>(safe+50)||S<(safe-50)){
-            LED8 &= ~(1<<0);
+            LED8 |=  BIT0;
         }else{
-            LED8 |= (1<<0);
+            LED8 &= ~BIT0;
         }
     }
 

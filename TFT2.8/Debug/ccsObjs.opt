@@ -1,0 +1,1 @@
+"./GUI.obj" "./TFT2.8.obj" "./Touch.obj" "./Touch_operation.obj" "./main.obj" "../lnk_msp430f169.cmd" -llibc.a 
